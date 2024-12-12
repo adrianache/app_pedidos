@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Pedidos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Generador de Pedidos</h1>
+
+        <div id="productos">
+            <div class="producto">
+                <span>Jarra eléctrica</span>
+                <button class="btn-urgente" onclick="marcarUrgente(0)">Marcar Urgente</button>
+            </div>
+            <div class="producto">
+                <span>Termo de acero</span>
+                <button class="btn-urgente" onclick="marcarUrgente(1)">Marcar Urgente</button>
+            </div>
+            <div class="producto">
+                <span>Vaso térmico</span>
+                <button class="btn-urgente" onclick="marcarUrgente(2)">Marcar Urgente</button>
+            </div>
+        </div>
+
+        <button class="btn-generar" onclick="generarPedido()">Generar Pedido</button>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+</body>
+
+</html>
