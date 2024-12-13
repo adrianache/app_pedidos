@@ -1,10 +1,16 @@
 const productos = [
-    { nombre: 'Jarra eléctrica', codigo: '176087', descripcion: 'Jarra eléctrica 1L - modelo 2024' },
-    { nombre: 'Termo de acero', codigo: '154672', descripcion: 'Termo de acero inoxidable' },
-    { nombre: 'Vaso térmico', codigo: '128765', descripcion: 'Vaso térmico grande' }
+    { nombre: 'Pava Eléctrica', codigo: '420405'},
+    { nombre: 'Mopa Giratoria', codigo: '415221'},
+    { nombre: 'Set Balde + Mopa Giratoria y Palo Extensible', codigo: '401393'}
 ];
 
 let productosUrgentes = [];
+let productosNoUrgentes = [];
+
+function marcarNoUrgente(index) {
+    productosNoUrgentes.push(productos[index]);
+    alert(`${productos[index].nombre} marcado como normal.`);
+}
 
 function marcarUrgente(index) {
     productosUrgentes.push(productos[index]);
@@ -17,9 +23,10 @@ function generarPedido() {
         return;
     }
 
+
+
     let ws = XLSX.utils.json_to_sheet(productosUrgentes.map(item => ({
-        Código: item.codigo,
-        Descripción: item.descripcion
+        Código: item.codigo
     })));
 
     let wb = XLSX.utils.book_new();
